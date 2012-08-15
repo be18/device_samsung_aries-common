@@ -13,6 +13,8 @@ public class Startup extends BroadcastReceiver {
         TouchKeyBacklightTimeout.restore(context);
         Hspa.restore(context);
         VolumeBoostPreference.restore(context);
+        DockAudio.restore(context);
+        Sanity.check(context);
     }
 
 }
