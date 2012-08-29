@@ -40,6 +40,7 @@ BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # Kernel Source
 #TARGET_KERNEL_SOURCE := kernel/samsung/aries
+TARGET_PREBUILT_KERNEL := device/samsung/galaxysmtd/zImage
 
 # Releasetools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/aries-common/releasetools/aries_ota_from_target_files
