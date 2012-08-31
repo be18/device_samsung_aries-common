@@ -44,6 +44,8 @@ on boot
 on fs
     mkdir /radio 0775 radio radio
     mount yaffs2 mtd@radio /radio
+    # We don't support encryption on yaffs (set before mount_all)
+    setprop ro.crypto.state unsupported
     mount_all fstab.aries
 
     chown radio radio /radio/modem.bin
@@ -189,9 +191,6 @@ service bdaddr /system/bin/bdaddr_read
 
 on property:init.svc.bootanim=running
     start bdaddr
-
-#on property:dev.bootcomplete=1
-#      start tvout
 
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     --baudrate 3000000 --patchram /vendor/firmware/bcm4329.hcd /dev/s3c2410_serial0
