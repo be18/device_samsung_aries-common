@@ -26,9 +26,6 @@ class EdifyGenerator(edify_generator.EdifyGenerator):
       edify_generator.EdifyGenerator.AssertDevice(self, device)
       self.script.append('show_progress(0.15, 5);');
       self.script.append(
-            ('package_extract_file("modem.bin", "/tmp/modem.bin");\n'
-             'set_perm(0, 0, 0777, "/tmp/modem.bin");'))
-      self.script.append(
             ('package_extract_file("updater.sh", "/tmp/updater.sh");\n'
              'set_perm(0, 0, 0777, "/tmp/updater.sh");'))
       self.script.append(
@@ -56,8 +53,8 @@ class EdifyGenerator(edify_generator.EdifyGenerator):
     def RunBackup(self, command):
       edify_generator.EdifyGenerator.RunBackup(self, command)
 
-    def RunConfig(self, command):
-      edify_generator.EdifyGenerator.RunConfig(self, command)
+    #def RunConfig(self, command):
+    #  edify_generator.EdifyGenerator.RunConfig(self, command)
 
     def WriteBMLoverMTD(self, partition, partition_start_block, reservoirpartition, reservoir_start_block, image):
       """Write the given package file into the given partition."""
