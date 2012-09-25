@@ -116,7 +116,7 @@ TARGET_DISABLE_TRIPLE_BUFFERING := false
 BOARD_ALLOW_EGL_HIBERNATION := true
 
 # hwcomposer: custom vsync ioctl
-BOARD_CUSTOM_VSYNC_IOCTL := false
+BOARD_CUSTOM_VSYNC_IOCTL := true
 
 # Include aries specific stuff
 -include device/samsung/aries-common/Android.mk
